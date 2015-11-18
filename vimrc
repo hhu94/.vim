@@ -21,6 +21,8 @@ let g:UltiSnipsEditSplit="vertical"
 Plugin 'honza/vim-snippets'
 let g:tex_flavor = "latex"
 
+Plugin 'tpope/vim-fugitive'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
