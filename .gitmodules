@@ -10,9 +10,6 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "vim-gutentags"]
-	path = vim-gutentags
-	url = https://github.com/ludovicchabant/vim-gutentags
 [submodule "bundle/vim-gutentags"]
 	path = bundle/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags
