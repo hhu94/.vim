@@ -4,15 +4,13 @@ snippet hwtemplate "A template for homework" b
 \usepackage[margin=1in]{geometry}
 \usepackage{enumitem}
 \usepackage{mathtools}
-\usepackage{amsthm}
-\usepackage{amsfonts}
 
 \begin{document}
 	\noindent Hao HU \hfill CSE ${1:course number} - Autumn 2015\\\\
 	Homework ${2:hw number} Bundle A
 	\begin{enumerate}
 		\item[${3:first number}]
-		${4:start here}
+			${0
 	\end{enumerate}
 \end{document}
 endsnippet
@@ -20,11 +18,21 @@ endsnippet
 snippet spliteq "Two columns of equations" b
 \begin{equation*}
 	\begin{aligned}
-		${1:start here}
+		${1:1st column}
 	\end{aligned}
 	\qquad \qquad
 	\begin{aligned}
-		${2:keep going}
+		${0:2nd column}
 	\end{aligned}
 \end{equation*}
+endsnippet
+
+# math
+
+snippet sum "Sum from i to n"
+\sum_{${1:i=1}}^{${2:n}} $0
+endsnippet
+
+snippet int "Integral from lower to upper"
+\int_{${1:lower}}^{${2:upper}} $0
 endsnippet

@@ -17,6 +17,7 @@ Plugin 'ludovicchabant/vim-gutentags'
 
 Plugin 'SirVer/ultisnips'
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 
 Plugin 'honza/vim-snippets'
 let g:tex_flavor = "latex"
