@@ -63,9 +63,6 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
   " (happens when dropping a file on gvim).
@@ -99,6 +96,10 @@ endif
 
 " Set tab size to 4, V> indent size to 4, and tab column size to 4.
 set tabstop=4 shiftwidth=4 softtabstop=4
+
+" Set text width to 80 and highlight 81th column
+set textwidth=80
+set colorcolumn=+1
 
 " Enable solarized
 syntax enable

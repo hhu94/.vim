@@ -8,10 +8,23 @@ snippet hwtemplate "A template for homework" b
 \usepackage{amsfonts}
 
 \begin{document}
-	\noindent Hao HU \hfill CSE ${1:course number} - Autumn 2015\\
+	\noindent Hao HU \hfill CSE ${1:course number} - Autumn 2015\\\\
 	Homework ${2:hw number} Bundle A
 	\begin{enumerate}
 		\item[${3:first number}]
-	\begin{enumerate}
+		${4:start here}
+	\end{enumerate}
 \end{document}
+endsnippet
+
+snippet spliteq "Two columns of equations" b
+\begin{equation*}
+	\begin{aligned}
+		${1:start here}
+	\end{aligned}
+	\qquad \qquad
+	\begin{aligned}
+		${2:keep going}
+	\end{aligned}
+\end{equation*}
 endsnippet
