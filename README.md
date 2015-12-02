@@ -1,7 +1,7 @@
 # .vim
 This is my Vim configuration. Plugins managed by Vundle.
 
-## Included Plugins
+##### Included Plugins
 * Vundle
 * UltiSnips
 * vim-snippets
@@ -10,7 +10,7 @@ This is my Vim configuration. Plugins managed by Vundle.
 * vim-colors-solarized
 * vim-gutentags
 
-## Installation
+##### Installation
 ```
 cd ~
 git clone https://github.com/hhu94/.vim.git --recursive
@@ -19,7 +19,7 @@ git clone https://github.com/hhu94/.vim.git --recursive
 vim +PluginInstall +qall
 ```
 
-## Dependencies
+##### Dependencies
 * Vim version >= 7.4 compiled with Python 2.x support.
 * Python version >= 2.7 or >= 3.0.
 * Exuberant-ctags, any version.
