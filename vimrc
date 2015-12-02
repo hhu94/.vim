@@ -105,6 +105,8 @@ set colorcolumn=+1
 " Enable solarized
 syntax enable
 set background=dark
+" Uncomment next line if color scheme of terminal in use is not Solarized.
+" let g:solarized_termcolors=256
 colorscheme solarized
 
 " Change destination of backup and swap files.
