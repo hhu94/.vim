@@ -11,7 +11,7 @@ This is my Vim configuration. Plugins managed by Vundle.
 * vim-gutentags
 
 ## Installation
-```bash
+```
 cd ~
 git clone https://github.com/hhu94/.vim.git --recursive
 # Compile YouCompleteMe with C-family language support
