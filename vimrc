@@ -5,7 +5,7 @@
 
 "===============================================================================
 
-set nocompatible	" Be iMproved
+set nocompatible    " Be iMproved
 
 "================================== Vundle =====================================
 
@@ -31,33 +31,34 @@ call vundle#end()
 "============================= Plugin Variables ================================
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger		= "<C-j>"
-let g:UltiSnipsJumpForwardTrigger	= "<tab>"
-let g:UltiSnipsJumpBackwardTrigger	= "<s-tab>"
-let g:UltiSnipsEditSplit			= "vertical"
-let g:UltiSnipsSnippetsDir			= "~/.vim/UltiSnips"
+let g:UltiSnipsExpandTrigger        = "<C-j>"
+let g:UltiSnipsJumpForwardTrigger   = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger  = "<s-tab>"
+let g:UltiSnipsEditSplit            = "vertical"
+let g:UltiSnipsSnippetsDir          = "~/.vim/UltiSnips"
 
 "================================== General ====================================
 
-set number			" Enable line numbers
-set backspace=2 	" Allow backspacing over everything in insert mode
-set undofile		" Keep an undo file (undo changes after closing)
-set history=50		" Keep 50 lines of command line history
-set ruler			" Show the cursor position all the time
-set showcmd			" Display incomplete commands
-set incsearch		" Do incremental searching
-set mouse=a			" Enable mouse
-set autoindent		" Always set autoindenting on
-set textwidth=80	" Set text width to 80
-set colorcolumn=+1	" Highlight 81th column
-set tabstop=4		" Set tab size to 4
-set shiftwidth=4	" Set v> indent size to 4
-set softtabstop=4	" Set tab column size to 4
+set number          " Enable line numbers
+set backspace=2     " Allow backspacing over everything in insert mode
+set undofile        " Keep an undo file (undo changes after closing)
+set history=50      " Keep 50 lines of command line history
+set ruler           " Show the cursor position all the time
+set showcmd         " Display incomplete commands
+set incsearch       " Do incremental searching
+set mouse=a         " Enable mouse
+set autoindent      " Always set autoindenting on
+set textwidth=80    " Set text width to 80
+set colorcolumn=+1  " Highlight 81th column
+set tabstop=4       " Set tab size to 4
+set shiftwidth=4    " Set v> indent size to 4
+set softtabstop=4   " Set tab column size to 4
+set expandtab       " Insert spaces when inserting a tab
 
 " Keep backup files and change destination of backup and swap files.
 " Create ~/.backups if it doesn't exist
 if !isdirectory($HOME."/.backups")
-	call mkdir($HOME."/.backups", "p")
+    call mkdir($HOME."/.backups", "p")
 endif
 set backup
 set backupdir=~/.backups//
@@ -99,5 +100,5 @@ autocmd BufReadPost *
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+          \ | wincmd p | diffthis
 endif
