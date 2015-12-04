@@ -1,84 +1,94 @@
-" Vundle settings
-set nocompatible              " be iMproved, required
-filetype off                  " required
+================================================================================
 
-" set the runtime path to include Vundle and initialize
+" Author: Hao Hu - github.com/hhu94
+" Vimrc for Unix systems and vim compiled with autocmd support
+
+================================================================================
+
+set nocompatible              " be iMproved
+
+" ================================= Vundle =====================================
+
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'Valloric/YouCompleteMe'
-
 Plugin 'altercation/vim-colors-solarized'
 
+" For use with exuberant-ctags
 Plugin 'ludovicchabant/vim-gutentags'
 
+" Pre-compile with .vim/bundle/YouCompleteMe/install.py
+Plugin 'Valloric/YouCompleteMe'
+
 Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-fugitive'
+
+call vundle#end()
+
+" ================================= Plugins ====================================
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<C-j>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 
-Plugin 'honza/vim-snippets'
-let g:tex_flavor = "latex"
+" vim-snippets
+let g:tex_flavor="latex"
 
-Plugin 'tpope/vim-fugitive'
+" ================================= General ====================================
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file (restore to previous version)
-  set undofile		" keep an undo file (undo changes after closing)
-endif
-set history=50		" keep 50 lines of command line history
+set number		" enable line numbers
+set backspace=2 " allow backspacing over everything in insert mode
+set undofile	" keep an undo file (undo changes after closing)
+set history=50	" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set incsearch	" do incremental searching
+set mouse=a		" enable mouse
+set autoindent		" always set autoindenting on
+set textwidth=80	" set text width to 80
+set colorcolumn=+1	" highlight 81th column
+set tabstop=4		" set tab size to 4
+set shiftwidth=4	" set v> indent size to 4
+set softtabstop=4	" set tab column size to 4
 
-" Don't use Ex mode, use Q for formatting
-map Q gq
+" keep backup files and change destination of backup and swap files.
+set backup
+set backupdir=~/.vim/backups//
+set directory=~/.vim/swapfiles//
 
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
+" enable filetype detection, filetype specific plugins and indentation rules
+filetype plugin indent on
 
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
+" Enable syntax highlighting
+syntax enable
 
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
+" ================================ Theme =======================================
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") >= 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+set background=dark
+" Uncomment the following if using terminal vim and the terminal is not running
+" with solarized colors.
+" let g:solarized_termcolors=256
+colorscheme solarized
 
-  augroup END
+" ================================ Remaps ======================================
 
-else
+inoremap <C-U> <C-G>u<C-U> 
+inoremap <C-W> <C-G>u<C-W>
+inoremap <CR> <C-G>u<CR>
+  
+" ================================ Addons ======================================
 
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
+" When editing a file, always jump to the last known cursor position.
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -94,60 +104,3 @@ if has('langmap') && exists('+langnoremap')
   " compatible).
   set langnoremap
 endif
-
-" Set tab size to 4, V> indent size to 4, and tab column size to 4.
-set tabstop=4 shiftwidth=4 softtabstop=4
-
-" Set text width to 80 and highlight 81th column
-set textwidth=80
-set colorcolumn=+1
-
-" Enable solarized
-syntax enable
-set background=dark
-" Uncomment next line if color scheme of terminal in use is not Solarized.
-" let g:solarized_termcolors=256
-colorscheme solarized
-
-" Change destination of backup and swap files.
-set backupdir=~/.vim/backups//
-set directory=~/.vim/swapfiles//
-
-" YCM and UltiSnips integration
-	let g:UltiSnipsExpandTrigger       ="<c-tab>"
-	let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-	let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-	" Enable tabbing through list of results
-	function! g:UltiSnips_Complete()
-		call UltiSnips#ExpandSnippet()
-		if g:ulti_expand_res == 0
-			if pumvisible()
-				return "\<C-n>"
-			else
-				call UltiSnips#JumpForwards()
-				if g:ulti_jump_forwards_res == 0
-				   return "\<TAB>"
-				endif
-			endif
-		endif
-		return ""
-	endfunction
-
-	au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-
-	" Expand snippet or return
-	let g:ulti_expand_res = 0
-	function! Ulti_ExpandOrEnter()
-		call UltiSnips#ExpandSnippet()
-		if g:ulti_expand_res
-			return ''
-		else
-			return "\<return>"
-	endfunction
-
-	" Set <space> as primary trigger
-	inoremap <return> <C-R>=Ulti_ExpandOrEnter()<CR>
-" End YCM and UltiSnips integration
-
-filetype plugin indent on

@@ -1,5 +1,5 @@
 # .vim
-This is my Vim configuration. Plugins managed by Vundle.
+This is my Vim configuration for Unix systems. Plugins managed by Vundle.
 
 ## Included Plugins
 * Vundle
@@ -18,10 +18,3 @@ git clone https://github.com/hhu94/.vim.git --recursive
 ./.vim/bundle/YouCompleteMe/install.py --clang-completer
 vim +PluginInstall +qall
 ```
-
-## Dependencies
-* Vim version >= 7.4 compiled with Python 2.x support.
-* Python version >= 2.7 or >= 3.0.
-* Exuberant-ctags, any version.
-* CMake version >= 2.8.11.
-
