@@ -1,7 +1,7 @@
 # .vim
 This is my Vim configuration for Unix systems. Plugins managed by Vundle.
 
-## Included Plugins
+#### Included Plugins
 * Vundle
 * UltiSnips
 * vim-snippets
@@ -10,7 +10,7 @@ This is my Vim configuration for Unix systems. Plugins managed by Vundle.
 * vim-colors-solarized
 * vim-gutentags
 
-## Installation
+#### Installation
 ```
 cd ~
 git clone https://github.com/hhu94/.vim.git --recursive
