@@ -58,9 +58,13 @@ set shiftwidth=4	" set v> indent size to 4
 set softtabstop=4	" set tab column size to 4
 
 " keep backup files and change destination of backup and swap files.
+" create ~/.backups if it doesn't exist
+if !isdirectory($HOME."/.backups")
+	call mkdir($HOME."/.backups", "p")
+endif
 set backup
-set backupdir=~/.vim/backups//
-set directory=~/.vim/swapfiles//
+set backupdir=~/.backups//
+set directory=~/.backups//
 
 " enable filetype detection, filetype specific plugins and indentation rules
 filetype plugin indent on
