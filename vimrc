@@ -1,11 +1,11 @@
 "===============================================================================
 
 " Author: Hao Hu - github.com/hhu94
-" Vimrc for Unix systems and vim compiled with autocmd support
+" Vimrc for Unix systems and vim compiled with autocmd support.
 
 "===============================================================================
 
-set nocompatible              " be iMproved
+set nocompatible	" Be iMproved
 
 "================================== Vundle =====================================
 
@@ -16,7 +16,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 
-" For use with exuberant-ctags
+" For use with exuberant-ctags.
 Plugin 'ludovicchabant/vim-gutentags'
 
 " Pre-compile with .vim/bundle/YouCompleteMe/install.py
@@ -28,37 +28,34 @@ Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
-"================================== Plugins ====================================
+"============================= Plugin Variables ================================
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger="<C-j>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
-
-" vim-snippets
-let g:tex_flavor="latex"
+let g:UltiSnipsExpandTrigger		= "<C-j>"
+let g:UltiSnipsJumpForwardTrigger	= "<tab>"
+let g:UltiSnipsJumpBackwardTrigger	= "<s-tab>"
+let g:UltiSnipsEditSplit			= "vertical"
+let g:UltiSnipsSnippetsDir			= "~/.vim/UltiSnips"
 
 "================================== General ====================================
 
-set number		" enable line numbers
-set backspace=2 " allow backspacing over everything in insert mode
-set undofile	" keep an undo file (undo changes after closing)
-set history=50	" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch	" do incremental searching
-set mouse=a		" enable mouse
-set autoindent		" always set autoindenting on
-set textwidth=80	" set text width to 80
-set colorcolumn=+1	" highlight 81th column
-set tabstop=4		" set tab size to 4
-set shiftwidth=4	" set v> indent size to 4
-set softtabstop=4	" set tab column size to 4
+set number			" Enable line numbers
+set backspace=2 	" Allow backspacing over everything in insert mode
+set undofile		" Keep an undo file (undo changes after closing)
+set history=50		" Keep 50 lines of command line history
+set ruler			" Show the cursor position all the time
+set showcmd			" Display incomplete commands
+set incsearch		" Do incremental searching
+set mouse=a			" Enable mouse
+set autoindent		" Always set autoindenting on
+set textwidth=80	" Set text width to 80
+set colorcolumn=+1	" Highlight 81th column
+set tabstop=4		" Set tab size to 4
+set shiftwidth=4	" Set v> indent size to 4
+set softtabstop=4	" Set tab column size to 4
 
-" keep backup files and change destination of backup and swap files.
-" create ~/.backups if it doesn't exist
+" Keep backup files and change destination of backup and swap files.
+" Create ~/.backups if it doesn't exist
 if !isdirectory($HOME."/.backups")
 	call mkdir($HOME."/.backups", "p")
 endif
@@ -66,13 +63,16 @@ set backup
 set backupdir=~/.backups//
 set directory=~/.backups//
 
-" enable filetype detection, filetype specific plugins and indentation rules
+" Enable filetype detection, filetype specific plugins and indentation rules.
 filetype plugin indent on
 
-" Enable syntax highlighting
+" Detect .tex files as latex files
+let g:tex_flavor = "latex"
+
+" Enable syntax highlighting.
 syntax enable
 
-"================================= Theme =======================================
+"=================================== Theme =====================================
 
 set background=dark
 " Uncomment the following if using terminal vim and the terminal is not running
@@ -80,13 +80,13 @@ set background=dark
 " let g:solarized_termcolors=256
 colorscheme solarized
 
-"================================= Remaps ======================================
+"=================================== Remaps ====================================
 
 inoremap <C-U> <C-G>u<C-U> 
 inoremap <C-W> <C-G>u<C-W>
 inoremap <CR> <C-G>u<CR>
   
-"================================= Addons ======================================
+"=================================== Addons ====================================
 
 " When editing a file, always jump to the last known cursor position.
 autocmd BufReadPost *
@@ -100,11 +100,4 @@ autocmd BufReadPost *
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
-endif
-
-if has('langmap') && exists('+langnoremap')
-  " Prevent that the langmap option applies to characters that result from a
-  " mapping.  If unset (default), this may break plugins (but it's backward
-  " compatible).
-  set langnoremap
 endif
