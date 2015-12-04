@@ -1,13 +1,13 @@
-================================================================================
+"===============================================================================
 
 " Author: Hao Hu - github.com/hhu94
 " Vimrc for Unix systems and vim compiled with autocmd support
 
-================================================================================
+"===============================================================================
 
 set nocompatible              " be iMproved
 
-" ================================= Vundle =====================================
+"================================== Vundle =====================================
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -28,7 +28,7 @@ Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
-" ================================= Plugins ====================================
+"================================== Plugins ====================================
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<C-j>"
@@ -40,7 +40,7 @@ let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 " vim-snippets
 let g:tex_flavor="latex"
 
-" ================================= General ====================================
+"================================== General ====================================
 
 set number		" enable line numbers
 set backspace=2 " allow backspacing over everything in insert mode
@@ -68,7 +68,7 @@ filetype plugin indent on
 " Enable syntax highlighting
 syntax enable
 
-" ================================ Theme =======================================
+"================================= Theme =======================================
 
 set background=dark
 " Uncomment the following if using terminal vim and the terminal is not running
@@ -76,13 +76,13 @@ set background=dark
 " let g:solarized_termcolors=256
 colorscheme solarized
 
-" ================================ Remaps ======================================
+"================================= Remaps ======================================
 
 inoremap <C-U> <C-G>u<C-U> 
 inoremap <C-W> <C-G>u<C-W>
 inoremap <CR> <C-G>u<CR>
   
-" ================================ Addons ======================================
+"================================= Addons ======================================
 
 " When editing a file, always jump to the last known cursor position.
 autocmd BufReadPost *
