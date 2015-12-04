@@ -28,5 +28,5 @@ Pre-compile YouCompleteMe with support for C-family languages, check out
 https://github.com/Valloric/YouCompleteMe#installation for options to support 
 other languages:
 ```
-./.vim/bundle/YouCompleteMe/install.py --clang-completer
+~/.vim/bundle/YouCompleteMe/install.py --clang-completer
 ```
