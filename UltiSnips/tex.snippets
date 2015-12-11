@@ -8,6 +8,7 @@ snippet hwtemplate "A template for homework" b
 \begin{document}
 	\noindent Hao HU \hfill CSE ${1:course number} - Autumn 2015\\\\
 	Homework ${2:hw number} Bundle A
+	%
 	\begin{enumerate}
 		\item[${3:first number}]
 			${0}
@@ -29,10 +30,14 @@ endsnippet
 
 # math
 
-snippet sum "Sum from i to n"
+snippet sum "Sum from i to n" i
 \sum_{${1:i=1}}^{${2:n}} $0
 endsnippet
 
-snippet int "Integral from lower to upper"
+snippet prod "Product from i to n" i
+\prod_{${1:i=1}}^{${2:n}} $0
+endsnippet
+
+snippet int "Integral from lower to upper" i
 \int_{${1:lower}}^{${2:upper}} $0
 endsnippet
