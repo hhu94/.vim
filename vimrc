@@ -25,6 +25,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Raimondi/delimitMate'
 
 call vundle#end()
 
@@ -36,6 +37,9 @@ let g:UltiSnipsJumpForwardTrigger   = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger  = "<s-tab>"
 let g:UltiSnipsEditSplit            = "vertical"
 let g:UltiSnipsSnippetsDir          = "~/.vim/UltiSnips"
+
+" delimitMate
+let delimitMate_expand_cr = 1
 
 "================================== General ====================================
 
@@ -84,9 +88,7 @@ colorscheme solarized
 "=================================== Remaps ====================================
 
 inoremap <C-U> <C-G>u<C-U> 
-inoremap <C-W> <C-G>u<C-W>
-inoremap <CR> <C-G>u<CR>
-  
+
 "=================================== Addons ====================================
 
 " When editing a file, always jump to the last known cursor position.
