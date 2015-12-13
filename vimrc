@@ -84,7 +84,11 @@ colorscheme solarized
 
 "=================================== Remaps ====================================
 
+" Use 'space' as leader but show '\' for showcmd
+map <space> <leader>
+
 inoremap <C-U> <C-G>u<C-U> 
+map <leader>t :ProjectTreeToggle<CR>
 
 "=================================== Addons ====================================
 
