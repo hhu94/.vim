@@ -19,10 +19,7 @@ Plugin 'altercation/vim-colors-solarized'
 " For use with exuberant-ctags.
 Plugin 'ludovicchabant/vim-gutentags'
 
-" Pre-compile with .vim/bundle/YouCompleteMe/install.py
-Plugin 'Valloric/YouCompleteMe'
-
-Plugin 'SirVer/ultisnips'
+" Pre-compile with .vim/bundle/YouCompleteMe/install.py Plugin 'Valloric/YouCompleteMe' Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
@@ -34,8 +31,8 @@ call vundle#end()
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger        = "<C-j>"
-let g:UltiSnipsJumpForwardTrigger   = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger  = "<s-tab>"
+let g:UltiSnipsJumpForwardTrigger   = "<C-j>"
+let g:UltiSnipsJumpBackwardTrigger  = "<C-k>"
 let g:UltiSnipsEditSplit            = "vertical"
 let g:UltiSnipsSnippetsDir          = "~/.vim/UltiSnips"
 
