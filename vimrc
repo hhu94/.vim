@@ -26,6 +26,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 
@@ -40,6 +41,9 @@ let g:UltiSnipsSnippetsDir          = "~/.vim/UltiSnips"
 
 " delimitMate
 let delimitMate_expand_cr = 1
+
+" Syntastic
+let g:syntastic_javascript_checkers = ['jshint']
 
 "================================== General ====================================
 
