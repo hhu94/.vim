@@ -94,6 +94,9 @@ map <space> <leader>
 inoremap <C-U> <C-G>u<C-U> 
 map <leader>t :ProjectTreeToggle<CR>
 
+nmap <leader>o o<Esc>k
+nmap <leader>O O<Esc>j
+
 "=================================== Addons ====================================
 
 " When editing a file, always jump to the last known cursor position.
