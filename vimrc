@@ -19,7 +19,10 @@ Plugin 'altercation/vim-colors-solarized'
 " For use with exuberant-ctags.
 Plugin 'ludovicchabant/vim-gutentags'
 
-" Pre-compile with .vim/bundle/YouCompleteMe/install.py Plugin 'Valloric/YouCompleteMe' Plugin 'SirVer/ultisnips'
+" Pre-compile with .vim/bundle/YouCompleteMe/install.py 
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
