@@ -46,7 +46,6 @@ let g:syntastic_javascript_checkers = ['jshint']
 
 set number          " Enable line numbers
 set backspace=2     " Allow backspacing over everything in insert mode
-set undofile        " Keep an undo file (undo changes after closing)
 set history=50      " Keep 50 lines of command line history
 set ruler           " Show the cursor position all the time
 set showcmd         " Display incomplete commands
@@ -68,6 +67,10 @@ endif
 set backup
 set backupdir=~/.backups//
 set directory=~/.backups//
+
+" Keep an undo file (undo changes after closing) in ~/.backups
+set undofile
+set undodir=~/.backups//
 
 " Enable filetype detection, filetype specific plugins and indentation rules.
 filetype plugin indent on
