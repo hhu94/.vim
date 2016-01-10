@@ -1,5 +1,5 @@
 # Notice
-This repo is deprecated, now my vimrc is managed in my [dotfiles repository](https://github.com/hhu94/dotfiles)
+This repo is deprecated, now my vimrc is managed in my [dotfiles repository](https://github.com/hhu94/.dotfiles).
 
 # .vim
 This is my Vim configuration for Unix systems. Plugins managed by Vundle.
