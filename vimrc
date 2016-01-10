@@ -57,9 +57,9 @@ set mouse=a         " Enable mouse
 set autoindent      " Always set autoindenting on
 set textwidth=80    " Set text width to 80
 set colorcolumn=+1  " Highlight 81th column
-set tabstop=4       " Set tab size to 4
-set shiftwidth=4    " Set v> indent size to 4
-set softtabstop=4   " Set tab column size to 4
+set tabstop=2       " Set tab size to 4
+set shiftwidth=2    " Set v> indent size to 4
+set softtabstop=2   " Set tab column size to 4
 set expandtab       " Insert spaces when inserting a tab
 
 " Keep backup files and change destination of backup and swap files.

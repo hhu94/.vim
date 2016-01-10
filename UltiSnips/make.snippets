@@ -1,0 +1,13 @@
+snippet exercise333 "Makefile for exercises in CSE333" b
+TARGET = $0 
+CC = gcc
+CFLAGS += -Wall -g -std=c11
+
+all: $(TARGET) 
+
+$(TARGET): $(TARGET).c
+	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c 
+
+clean:
+	/bin/rm -f $(TARGET) 
+endsnippet
